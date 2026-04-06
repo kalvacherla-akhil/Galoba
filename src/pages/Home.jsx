@@ -1,24 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronUp, ChevronDown, Zap, Leaf, Clock, Award } from 'lucide-react';
-import Button from '../components/Button';
-import MealCard from '../components/MealCard';
-import PlanCard from '../components/PlanCard';
-import ReviewCard from '../components/ReviewCard';
-import { getMeals, getPlans, getReviews } from '../api/services';
+import { ChevronUp, ChevronDown, Zap, Leaf, Clock, Award } from 'lucide-react';
 import { foodImages } from '../data/foodImages';
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 gsap.registerPlugin(ScrollTrigger);
 
 
 const Home = () => {
-  const [meals, setMeals] = useState([]);
-  const [plans, setPlans] = useState([]);
-  const [reviews, setReviews] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [orbitRotation, setOrbitRotation] = useState(0);
   const popularBgRef = useRef(null);
@@ -57,54 +47,12 @@ useEffect(() => {
   });
 }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [mealsRes, plansRes, reviewsRes] = await Promise.all([
-          getMeals(),
-          getPlans(),
-          getReviews(),
-        ]);
-        setMeals(mealsRes.data.slice(0, 6));
-        setPlans(plansRes.data);
-        setReviews(reviewsRes.data.slice(0, 3));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
   // Auto-rotate orbit images every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setOrbitRotation((prev) => prev - 60);
     }, 50);
     return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const [mealsRes, plansRes, reviewsRes] = await Promise.all([
-          getMeals(),
-          getPlans(),
-          getReviews(),
-        ]);
-        setMeals(mealsRes.data.slice(0, 6));
-        setPlans(plansRes.data);
-        setReviews(reviewsRes.data.slice(0, 3));
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
   }, []);
 
   // Handle orbit rotation
