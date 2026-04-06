@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a12dc4fd.css",
+    "main.js": "/static/js/main.f34c7806.js",
+    "static/media/pista.jpeg": "/static/media/pista.644eba52d6d7c67c8fc9.jpeg",
+    "static/media/Oatmeal-smoothi.jpeg": "/static/media/Oatmeal-smoothi.0fdf5f6ebaea89a290fe.jpeg",
+    "static/media/Banana.jpeg": "/static/media/Banana.472474d2175bfc64d2af.jpeg",
+    "static/media/eggsalad.jpg": "/static/media/eggsalad.50d05d2aa93f237f4d49.jpg",
+    "static/media/pummpkin.jpeg": "/static/media/pummpkin.066f401746aa48941a4d.jpeg",
+    "static/media/KetoEggmeal.jpeg": "/static/media/KetoEggmeal.3f31dac0f63c3f69be58.jpeg",
+    "static/media/oats.jpeg": "/static/media/oats.2dd5a4e90dda64762763.jpeg",
+    "static/media/ketopannermeal.jpeg": "/static/media/ketopannermeal.efbf02884f68a035db4b.jpeg",
+    "static/media/N.jpeg": "/static/media/N.e8176ede9845b1befafa.jpeg",
+    "static/media/ketochickenmeal.jpeg": "/static/media/ketochickenmeal.28ced7ed9f0f4c9eed08.jpeg",
+    "static/media/Sprout-Salad.jpg": "/static/media/Sprout-Salad.a9cd32a2eb2fc5903a2c.jpg",
+    "static/media/fruitPremimum.jpg": "/static/media/fruitPremimum.c61ead8b907f153f40e4.jpg",
+    "static/media/fruitSample.jpg": "/static/media/fruitSample.4cf8b509300f577a7c12.jpg",
+    "static/media/Vegbf.jpeg": "/static/media/Vegbf.69d114b2644d0e1df248.jpeg",
+    "static/media/chickenmeal.jpeg": "/static/media/chickenmeal.a5124f76833fc66cfe3b.jpeg",
+    "static/media/Dates-shake.jpg": "/static/media/Dates-shake.974b82dd2c6eecf99ba1.jpg",
+    "static/media/Galobalogo.jpeg": "/static/media/Galobalogo.380b4aaaccb833e69a13.jpeg",
+    "static/media/peanutbutter-banana.jpeg": "/static/media/peanutbutter-banana.e5ec8b1262a8702f94ce.jpeg",
+    "static/media/weightlossSalad.jpg": "/static/media/weightlossSalad.5b34f802c6152a084c69.jpg",
+    "static/media/oatmeal-chocolate.jpeg": "/static/media/oatmeal-chocolate.2250640ab6ff9f04d60f.jpeg",
+    "static/media/greek-yogurt.jpeg": "/static/media/greek-yogurt.7868d9c6fb6f76477235.jpeg",
+    "static/media/cashew-shake.jpeg": "/static/media/cashew-shake.d0a157ab5af470a3f9a0.jpeg",
+    "index.html": "/index.html",
+    "main.a12dc4fd.css.map": "/static/css/main.a12dc4fd.css.map",
+    "main.f34c7806.js.map": "/static/js/main.f34c7806.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a12dc4fd.css",
+    "static/js/main.f34c7806.js"
+  ]
+}
