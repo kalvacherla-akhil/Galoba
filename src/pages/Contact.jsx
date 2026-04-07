@@ -41,19 +41,19 @@ const Contact = () => {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+91 95427 04244',
+      link: 'tel:+919542704244',
     },
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@dbox.com',
-      link: 'mailto:hello@dbox.com',
+      value: 'galabadite@gmail.com',
+      link: 'mailto:galabadite@gmail.com',
     },
     {
       icon: MapPin,
       title: 'Address',
-      value: '123 Fitness St, New York, NY 10001',
+      value: 'Kukatpally, Hyderabad, Telangana',
       link: '#',
     },
   ];
@@ -202,7 +202,7 @@ const Contact = () => {
                 <div className="text-center">
                   <MapPin size={48} className="mx-auto mb-2" />
                   <p className="font-poppins font-semibold">Our Location</p>
-                  <p className="text-sm text-gray-100">123 Fitness St, NY 10001</p>
+                  <p className="text-sm text-gray-100">Kukatpally, Hyderabad, Telangana</p>
                 </div>
               </div>
             </motion.div>

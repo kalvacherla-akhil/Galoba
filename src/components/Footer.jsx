@@ -3,13 +3,9 @@ import { motion } from 'framer-motion';
 import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = 2025;
 
   const footerSections = [
-    {
-      title: 'Company',
-      links: ['About Us', 'Careers', 'Blog', 'Press'],
-    },
     {
       title: 'Support',
       links: ['Help Center', 'Contact Us', 'FAQs', 'Terms of Service'],
@@ -84,15 +80,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-2">
                 <Phone size={18} className="text-primary" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+91 95427 04244</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={18} className="text-primary" />
-                <span className="text-gray-300">hello@dbox.com</span>
+                <span className="text-gray-300">galabadite@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={18} className="text-primary" />
-                <span className="text-gray-300">123 Fitness St, NY 10001</span>
+                <span className="text-gray-300">Kukatpally, Hyderabad, Telangana</span>
               </div>
             </div>
           </motion.div>
@@ -102,7 +98,7 @@ const Footer = () => {
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm">
-              © {currentYear} DBOX. All rights reserved.
+              © {currentYear} GALOBA. All rights reserved.
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
               <button className="text-gray-300 hover:text-primary text-sm transition-colors">
