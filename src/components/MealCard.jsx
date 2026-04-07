@@ -3,12 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingCart, Flame, TrendingDown, Calendar } from 'lucide-react';
 import Button from './Button';
 import useCartStore from '../store/cartStore';
-import { useNavigate } from 'react-router-dom';
 import Toast from './Toast';
 
 const MealCard = ({ meal }) => {
   const addItem = useCartStore((state) => state.addItem);
-  const navigate = useNavigate();
   const [purchaseType, setPurchaseType] = useState('oneTime'); // 'oneTime', 'weekly', 'monthly'
   const [showToast, setShowToast] = useState(false);
 
@@ -17,14 +15,18 @@ const MealCard = ({ meal }) => {
       addItem(meal);
       setShowToast(true);
     } else {
-      // Navigate to Plans page with subscription data
-      navigate('/plans', { 
-        state: { 
-          meal,
-          subscriptionType: purchaseType,
-          calculatedPrice: subscriptionPlans[purchaseType].totalPrice
-        } 
-      });
+      // For weekly/monthly, add directly to cart with subscription info
+      const subscriptionItem = {
+        ...meal,
+        subscriptionType: purchaseType,
+        totalPrice: subscriptionPlans[purchaseType].totalPrice,
+        isSubscription: true,
+        duration: purchaseType === 'weekly' ? '6 days' : '25 days',
+        discount: purchaseType === 'weekly' ? '7%' : '12%'
+      };
+      
+      addItem(subscriptionItem);
+      setShowToast(true);
     }
   };
 
@@ -53,7 +55,7 @@ const MealCard = ({ meal }) => {
       price: basePrice,
       discount: 7,
       mealsInfo: `${weeklyDays} days/week`,
-      buttonText: 'Select Days',
+      buttonText: 'Add to Cart',
       totalPrice: weeklyTotal,
     },
     monthly: {
@@ -61,7 +63,7 @@ const MealCard = ({ meal }) => {
       price: basePrice,
       discount: 12,
       mealsInfo: `${monthlyDays} days/month`,
-      buttonText: 'Select Days',
+      buttonText: 'Add to Cart',
       totalPrice: monthlyTotal,
     },
   };

@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Menu from './pages/Menu';
-import Plans from './pages/Plans';
 import About from './pages/About';
 import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
@@ -49,14 +48,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Menu />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/plans"
-              element={
-                <ProtectedRoute>
-                  <Plans />
                 </ProtectedRoute>
               }
             />

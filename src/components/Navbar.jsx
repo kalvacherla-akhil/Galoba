@@ -39,7 +39,6 @@ const Navbar = () => {
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
-    { name: 'Plans', path: '/plans' },
     { name: 'About', path: '/about' },
     { name: 'Reviews', path: '/reviews' },
     { name: 'Contact', path: '/contact' },

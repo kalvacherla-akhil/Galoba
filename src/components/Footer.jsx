@@ -37,7 +37,7 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-2xl font-poppins font-bold text-primary mb-4">DBOX</h3>
+            <h3 className="text-2xl font-poppins font-bold text-primary mb-4">GALOBA</h3>
             <p className="text-gray-300 mb-4">Fuel Your Gains with premium diet food delivery.</p>
             <div className="flex gap-4">
               {socialIcons.map((social, index) => (
