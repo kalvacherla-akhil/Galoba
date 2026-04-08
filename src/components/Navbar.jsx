@@ -1,40 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, ShoppingCart, LogOut } from 'lucide-react';
+import { Menu, X, ShoppingCart } from 'lucide-react';
 import useCartStore from '../store/cartStore';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import logo from '../assets/Galobalogo.jpeg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const cartItems = useCartStore((state) => state.items);
-  const navigate = useNavigate();
-
-  // Check auth status on component mount and storage changes
-  useEffect(() => {
-    const checkAuth = () => {
-      setIsLoggedIn(localStorage.getItem('isAuthenticated') === 'true');
-    };
-
-    // Initial check
-    checkAuth();
-
-    // Listen for auth changes
-    window.addEventListener('storage', checkAuth);
-    return () => window.removeEventListener('storage', checkAuth);
-  }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
-    localStorage.removeItem('phoneNumber');
-    setIsLoggedIn(false);
-    toast.success('Logged out successfully');
-    navigate('/login');
-    setIsOpen(false); // Close mobile menu if open
-  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -88,30 +61,6 @@ const Navbar = () => {
               </motion.div>
             </Link>
 
-            {/* Logout Button - Desktop */}
-            {isLoggedIn && (
-              <motion.button
-                onClick={handleLogout}
-                className="hidden md:flex items-center gap-1 text-sm text-gray-600 hover:text-red-600 transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                title="Logout"
-              >
-                <LogOut size={18} className="mr-1" />
-                <span>Logout</span>
-              </motion.button>
-            )}
-
-            {/* Login Button - Desktop */}
-            {!isLoggedIn && (
-              <Link
-                to="/login"
-                className="hidden md:block px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium"
-              >
-                Login
-              </Link>
-            )}
-
             {/* Mobile Menu Button */}
             <button
               className="md:hidden"
@@ -140,26 +89,6 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            {isLoggedIn ? (
-              <button
-                onClick={() => {
-                  handleLogout();
-                  setIsOpen(false);
-                }}
-                className="w-full text-left py-2 px-4 hover:bg-neutral-bg rounded-lg transition-colors flex items-center gap-2 text-red-600"
-              >
-                <LogOut size={18} />
-                Logout
-              </button>
-            ) : (
-              <Link
-                to="/login"
-                className="block py-2 px-4 hover:bg-neutral-bg rounded-lg transition-colors text-primary font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Login / Sign Up
-              </Link>
-            )}
           </motion.div>
         )}
       </div>

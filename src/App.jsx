@@ -11,7 +11,6 @@ import Reviews from './pages/Reviews';
 import Contact from './pages/Contact';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
-import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
@@ -32,8 +31,6 @@ function App() {
             pauseOnHover
           />
           <Routes>
-            <Route path="/login" element={<Login />} />
-            
             {/* Protected Routes */}
             <Route
               path="/"

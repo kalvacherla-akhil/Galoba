@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(
     localStorage.getItem('isAuthenticated') === 'true'
   );
-  const location = useLocation();
 
   // Listen for authentication changes
   useEffect(() => {
@@ -18,9 +16,10 @@ const ProtectedRoute = ({ children }) => {
   }, []);
 
   if (!isAuthenticated) {
-    // Store the intended destination before redirecting to login
-    localStorage.setItem('redirectAfterLogin', location.pathname);
-    return <Navigate to="/login" replace />;
+    // Auto-login for demo purposes since login page is removed
+    localStorage.setItem('isAuthenticated', 'true');
+    setIsAuthenticated(true);
+    return children;
   }
 
   return children;
