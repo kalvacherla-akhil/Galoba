@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, Twitter, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { MessageSquare, Instagram, MapPin, Mail, Phone } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = 2025;
@@ -17,21 +17,19 @@ const Footer = () => {
   ];
 
   const socialIcons = [
-    { icon: Facebook, url: '#' },
-    { icon: Instagram, url: '#' },
-    { icon: Twitter, url: '#' },
-    { icon: Linkedin, url: '#' },
+    { icon: MessageSquare, url: 'https://wa.me/917036242781', title: 'WhatsApp' },
+    { icon: Instagram, url: 'https://www.instagram.com/galoba_dietbox?igsh=Y3dwdHdqOWRlZzg0' },
   ];
 
   return (
     <footer className="bg-dark-text text-white py-16">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5 }} 
           >
             <h3 className="text-2xl font-poppins font-bold text-primary mb-4">GALOBA</h3>
             <p className="text-gray-300 mb-4">Fuel Your Gains with premium diet food delivery.</p>
@@ -42,6 +40,7 @@ const Footer = () => {
                   href={social.url}
                   whileHover={{ scale: 1.2, color: '#2ECC71' }}
                   className="text-gray-300 hover:text-primary transition-colors"
+                  title={social.title || 'Social Media'}
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -84,7 +83,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Mail size={18} className="text-primary" />
-                <span className="text-gray-300">galabadite@gmail.com</span>
+                <span className="text-gray-300">galobadiet@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={18} className="text-primary" />
