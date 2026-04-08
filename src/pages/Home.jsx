@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronUp, ChevronDown, Zap, Leaf, Clock, Award, Brain, Sparkles, Loader2 } from 'lucide-react';
+import { ChevronUp, ChevronDown, Brain, Loader2 } from 'lucide-react';
 import { foodImages } from '../data/foodImages';
 import { useNavigate } from 'react-router-dom';
 import gsap from "gsap";
@@ -8,17 +8,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Menu images imports
 import nonvegbf from '../assets/N.jpeg';
-import oats from '../assets/oats.jpeg'
-import vegbf from '../assets/Vegbf.jpeg';
 import sprouts from '../assets/Sprout-Salad.jpg';
 import eggsalad from '../assets/eggsalad.jpg';
-import Wlsalad from '../assets/weightlossSalad.jpg';
-import FruitSamp from '../assets/fruitSample.jpg';
 import FruitPrem from '../assets/fruitPremimum.jpg';
-import chickenmeal from '../assets/chickenmeal.jpeg';
 import Bshake from '../assets/Banana.jpeg';
 import cashew from '../assets/cashew-shake.jpeg';
-import dates from '../assets/Dates-shake.jpg';
 import ketochicken from '../assets/ketochickenmeal.jpeg';
 import ketopanner from '../assets/ketopannermeal.jpeg';
 import galobaLogo from '../assets/Galobalogo.jpeg';
@@ -178,47 +172,8 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const whyDboxFeatures = [
-    {
-      icon: Zap,
-      title: 'High Protein',
-      description: 'Packed with protein to fuel your workouts and recovery.',
-    },
-    {
-      icon: Leaf,
-      title: 'Fresh Ingredients',
-      description: 'Sourced daily from local organic farms.',
-    },
-    {
-      icon: Clock,
-      title: 'Quick Delivery',
-      description: 'Fresh meals delivered to your door in 30 minutes.',
-    },
-    {
-      icon: Award,
-      title: 'Certified Nutrition',
-      description: 'Planned by certified nutritionists and dietitians.',
-    },
-  ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  };
 
   // Hero section state for orbit rotation
   const [orbitRotation, setOrbitRotation] = useState(0);
@@ -612,7 +567,7 @@ const Home = () => {
                 >
                   {/* Orbit Images positioned using polar coordinates */}
                   <AnimatePresence>
-                    {orbitImages.map((item, idx) => {
+                    {orbitImages.map((item) => {
                       const angleRad = (item.baseAngle * Math.PI) / 180;
                       const x = Math.cos(angleRad) * orbitRadius;
                       const y = Math.sin(angleRad) * orbitRadius;
@@ -757,7 +712,7 @@ const Home = () => {
               },
             }}
           >
-            {menuCategories.map((category, index) => (
+            {menuCategories.map((category) => (
               <motion.div
                 key={category.id}
                 variants={{
